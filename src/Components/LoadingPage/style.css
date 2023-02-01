@@ -41,6 +41,7 @@
     margin: auto;
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 @media(max-width: 50em){

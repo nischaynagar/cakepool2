@@ -317,14 +317,14 @@
     font-family: 'PrimaryContent';
     font-size: 32px;
 }
-@keyframes slideInFromLef {
+/* @keyframes slideInFromLef {
     0% {
       width: min(25ch, 25vw);
     }
     100% {
       width: 100%;
     }
-  }
+  } */
 .grid-box{
     display: grid;
     padding: 2em 2em;
@@ -333,8 +333,8 @@
     grid-template-areas: 'one'
     'two'
     'three';
-    animation: 2s ease-out 0s 1 slideInFromLef;
-    animation-fill-mode: forwards;
+    /* animation: 2s ease-out 0s 1 slideInFromLef;
+    animation-fill-mode: forwards; */
 }
 
 .box-1{
@@ -365,6 +365,7 @@
     background-color: rgba(2, 119, 133, 1);;
     display: grid;
     gap: 2 rem;
+    place-items: center;
 }
 
 .icon-center{
@@ -404,8 +405,7 @@
   }
   
   .full-content-1 {  
-    /* This section calls the slideInFromLeft animation we defined above */
-    animation: 2s ease-out 0s 1 slideInFromLeft;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
     animation-fill-mode: forwards;
   }
 
@@ -413,13 +413,17 @@
     display: flex;
     gap: 2rem;
 }
-
+.full-content-text{
+    font-family: 'Montserrat';
+}
 .flex{
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
 }
-
+.full-content-para{
+    font-weight: 400;
+}
 @media (min-width: 50em){
     .grid-box{
         grid-template-areas:
@@ -445,6 +449,22 @@
     }
     .full-content-1{
         grid-template-columns: 1fr 1fr;
+        padding: 3em 3em;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .token-icon{
+        transform: scale(3);
+        width: 50%;
+    }
+    .full-content-1 h2{
+        font-size: 20px;
+    }
+    .full-content-1 p{
+        font-size: 16px;
+    }
+    .full-content-para{
+        font-size: 16px;
     }
 }
 
@@ -523,5 +543,9 @@
     }
     .logo p{
         font-size: 16px;
+    }
+    .full-content-text{
+        display: grid;
+        gap: 2rem;
     }
 }

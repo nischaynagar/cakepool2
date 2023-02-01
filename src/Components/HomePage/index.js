@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import './style.css'
 import { ReactComponent as Community1 } from '../assets/images/community1.svg';
 import { ReactComponent as Reward } from '../assets/images/reward.svg';
@@ -22,12 +22,16 @@ export default function HomePage(props) {
     const page3 = useRef();
     const page4 = useRef();
     const page5 = useRef();
-    const options = {
+    const options = useMemo(() => ({
         root: null,
         threshold: 0.1,
         rootMargin: "-220px"
-    };
+        }), []);
     useEffect(() => {
+        let temppage1 = null;
+        let temppage2 = null;
+        let temppage3 = null;
+        let temppage4 = null;
         const observer = new IntersectionObserver(function
             (entries, observer) {
                 entries.forEach(entry => {
@@ -54,21 +58,37 @@ export default function HomePage(props) {
                     }
                 })
             }, options)
-        if(page1.current)
+        if(page1.current){
             observer.observe(page1.current);
-        if(page2.current)
+            temppage1 = page1.current;}
+
+        if(page2.current){
         observer.observe(page2.current);
-        if(page3.current)
+        temppage2 = page2.current;}
+
+        if(page3.current){
         observer.observe(page3.current);
-        if(page4.current)
+        temppage3 = page3.current;}
+        
+        if(page4.current){
         observer.observe(page4.current);
+        temppage4 = page4.current;}
+
       return () => {
-        observer.unobserve(page1.current);
-        observer.unobserve(page2.current);
-        observer.unobserve(page3.current);
-        observer.unobserve(page4.current);
+        if(temppage1)
+        observer.unobserve(temppage1);
+
+        if(temppage1)
+        observer.unobserve(temppage2);
+
+        if(temppage1)
+        observer.unobserve(temppage3);
+
+        if(temppage1)
+        observer.unobserve(temppage4);
+
       }
-    }, [page1, page2, page3, page4, page5, options]);
+    }, [page1, page2, page3, page4, page5, options, props]);
     
     const [contentNum, setcontentNum] = useState(0);
     function showAll(){
@@ -76,6 +96,12 @@ export default function HomePage(props) {
     }
     function showBox1(){
         setcontentNum(1);
+    }
+    function showBox2(){
+        setcontentNum(2);
+    }
+    function showBox3(){
+        setcontentNum(3);
     }
     function readMore() {
         var dots = document.getElementById("dots");
@@ -172,7 +198,7 @@ export default function HomePage(props) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='box box-2'>
+                                    <div className='box box-2' onMouseEnter={showBox2}>
 
                                         <BuySell className='icon-center' />
                                         <div className='main-content'>
@@ -186,7 +212,7 @@ export default function HomePage(props) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='box box-3'>
+                                    <div className='box box-3' onMouseEnter={showBox3}>
                                         <EthereumCoin className='icon-center' />
                                         <div className='main-content'>
 
@@ -202,9 +228,9 @@ export default function HomePage(props) {
                                     </div>
                                 </div>
                                 :
-                                <div className="full-content-1" onMouseLeave={showAll}>
-                                    <Binance />
-                                    <div>
+                                (contentNum===1)?<div className="full-content-1" onMouseLeave={showAll}>
+                                    <Binance className='token-icon'/>
+                                    <div className='full-content-text'>
                                     <div className='full-content-main'>
                                         <div className='flex'>
                                             <h2>Buy:</h2>
@@ -215,12 +241,49 @@ export default function HomePage(props) {
                                             <p> Total tax 21% </p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique odio perspiciatis reiciendis enim, est officiis natus animi temporibus ea ex.</p>
+                                    <div className='full-content-para'>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae.</p>
                                     </div>
                                     </div>
                                 </div>
-                                }
+                                :(contentNum===2)?
+                                <div className="full-content-1" onMouseLeave={showAll}>
+                                    <BuySell className='token-icon' />
+                                    <div className='full-content-text'>
+                                    <div className='full-content-main'>
+                                            <div className='flex'>
+                                                <h2>Buy/Sell:</h2>
+                                                <p>3% BUSD rewards</p>
+                                            </div>
+                                            <div className='flex'>
+                                                <h2>Liquidity:</h2>
+                                                <p>3% liquidity pool</p>
+                                            </div>
+                                    </div>
+                                    <div className='full-content-para'>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae.</p>
+                                    </div>
+                                    </div>
+                                </div>:
+                                <div className="full-content-1" onMouseLeave={showAll}>
+                                <EthereumCoin className='token-icon' />
+                                <div className='full-content-text'>
+                                <div className='full-content-main'>
+                                    <div className='flex'>
+                                        <h2>Buy:</h2>
+                                        <p>7% cake staking pool</p>
+                                    </div>
+                                    <div className='flex'>
+                                        <h2>Sell:</h2>
+                                        <p>15% cake staking pool</p>
+                                    </div>
+                                </div>
+                                <div className='full-content-para'>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae.</p>
+                                </div>
+                                </div>
+                            </div>}
+                                
                             </div>
                         </div>
                     </div>
@@ -236,12 +299,12 @@ export default function HomePage(props) {
                             <div className='social-icon'>
                                 <h2>Follow Us</h2>
                                 <ul className='social-icon-list'>
-                                    <li><a href="#"></a><Instagram1 /></li>
-                                    <li><a href="#"></a><Tiktok1 /></li>
-                                    <li><a href="#"></a><Reddit1 /></li>
-                                    <li><a href="#"></a><Twitter1 /></li>
-                                    <li><a href="#"></a><Telegram1 /></li>
-                                    <li><a href="#"></a><Discord1 /></li>
+                                    <li><a href="https://google.com"><Instagram1 /></a></li>
+                                    <li><a href="google.com"><Tiktok1 /></a></li>
+                                    <li><a href="google.com"><Reddit1 /> </a></li>
+                                    <li><a href="google.com"><Twitter1 /></a></li>
+                                    <li><a href="google.com"><Telegram1 /></a></li>
+                                    <li><a href="google.com"><Discord1 /></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -254,10 +317,10 @@ export default function HomePage(props) {
                             </div>
                             <ul className="social-icon-list">
 
-                                <li><a href="#"></a><Telegram2 className='bottom-icon' /></li>
-                                <li><a href="#"></a><Twitter2 className='bottom-icon' /></li>
-                                <li><a href="#"></a><Reddit2 className='bottom-icon' /></li>
-                                <li><a href="#"></a><Discord2 className='bottom-icon' /></li>
+                                <li><a href="google.com"><Telegram2 className='bottom-icon' /></a></li>
+                                <li><a href="google.com"><Twitter2 className='bottom-icon' /></a></li>
+                                <li><a href="google.com"><Reddit2 className='bottom-icon' /></a></li>
+                                <li><a href="google.com"><Discord2 className='bottom-icon' /></a></li>
 
                             </ul>
                         </footer>
