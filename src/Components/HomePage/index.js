@@ -16,6 +16,10 @@ import { ReactComponent as Twitter2 } from '../assets/images/twitter2.svg';
 import { ReactComponent as Tiktok1 } from '../assets/images/tiktok1.svg';
 import { ReactComponent as Telegram1 } from '../assets/images/telegram1.svg';
 import { ReactComponent as Telegram2 } from '../assets/images/telegram2.svg';
+import trdd from '../assets/images/5300_2_02-ai 1.png';
+import trdd2 from '../assets/images/Ellipse6.png';
+;
+
 export default function HomePage(props) {
     const page1 = useRef();
     const page2 = useRef();
@@ -223,17 +227,18 @@ export default function HomePage(props) {
                                 }
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
             <div className="position-relative p5" ref={page5}>
-                <div className="bg-footer">
-                    <div className="container">
+                <div className="bg-footer  container_relative">
+                    <div className="container ">
                         <div className='display-grid footer-1'>
-                            <div>
+                            <div className='flex'>
+                                <div>
                                 <p className='footer-para'>CakePool is set up to have rewards given out even if there is zero trading being done</p>
-                            </div>
-                            <div className='social-icon'>
+                                <div className='social-icon'>
                                 <h2>Follow Us</h2>
                                 <ul className='social-icon-list'>
                                     <li><a href="#"></a><Instagram1 /></li>
@@ -244,6 +249,13 @@ export default function HomePage(props) {
                                     <li><a href="#"></a><Discord1 /></li>
                                 </ul>
                             </div>
+                                </div>
+                                <img src={trdd} /> 
+
+                            </div>
+
+                            
+
                         </div>
                     </div>
                     <div className="container-mobile">
@@ -261,8 +273,12 @@ export default function HomePage(props) {
 
                             </ul>
                         </footer>
+
                     </div>
+                    <img src={trdd2} className="curve_footer"/> 
+
                 </div>
+
             </div>
         </>
     )
