@@ -293,7 +293,7 @@ export default function HomePage(props) {
                 <div className="bg-footer">
                     <div className="container">
                         <div className='display-grid footer-1'>
-                            <div>
+                            <div className='footer-content'>
                                 <p className='footer-para'>CakePool is set up to have rewards given out even if there is zero trading being done</p>
                             </div>
                             <div className='social-icon'>
@@ -307,6 +307,7 @@ export default function HomePage(props) {
                                     <li><a href="google.com"><Discord1 /></a></li>
                                 </ul>
                             </div>
+                            <img clssName='footer-img' src={require('../assets/images/5300_2_02-ai.png')} alt="" />
                         </div>
                     </div>
                     <div className="container-mobile">

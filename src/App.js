@@ -12,6 +12,7 @@ export default function App() {
         <Navbar backGround={navColor} textColor={textColor}/>
         <LoadingPage changeNav={setnavColor} settextColor={settextColor}/>
         <HomePage changeNav={setnavColor} settextColor={settextColor}/>
+
     </div>
   )
 }

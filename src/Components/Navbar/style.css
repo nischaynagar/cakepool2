@@ -64,10 +64,17 @@
     }
 }
   @media (max-width: 50em) {
+    .primary-header {
+      padding-top: 0;
+      top: 0;
+    }
+    .mobile-width{
+      width: 100% !important;
+    }
     .nav-wrapper{
-      background-color: #00444c;
+      background-color: #00A9BE !important;
       border-radius: 0;
-      padding: 0 1em;
+      padding: 0.5em 1em;
     }
     .primary-navigation {
       display: none;
@@ -76,7 +83,7 @@
       inset: 7rem var(--size-400) auto;
       max-width: 25rem;
       margin-left: auto;
-      background: #00444c;
+      background: #00A9BE;
       border-radius: var(--size-100);
       box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
       z-index: 3;

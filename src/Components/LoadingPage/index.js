@@ -25,7 +25,6 @@ export default function LoadingPage(props) {
         if (entry.target.classList.contains('p0')) {
           props.changeNav("#035D68")
           props.settextColor('white')
-          console.log("je;;p")
         }
       })
     }, options)

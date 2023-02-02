@@ -38,7 +38,7 @@ export default function Navbar(props) {
   return (
     <>
       <header className="primary-header">
-        <div className="container">
+        <div className="container mobile-width">
           <div className="nav-wrapper" id='nav-wrapper' ref={myNav}>
             <div className="logo" ref={myLogo}>
               <img src={require('../assets/images/logo1.png')} alt="Manage" />
