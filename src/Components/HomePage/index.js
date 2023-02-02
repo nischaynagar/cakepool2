@@ -16,6 +16,9 @@ import { ReactComponent as Twitter2 } from '../assets/images/twitter2.svg';
 import { ReactComponent as Tiktok1 } from '../assets/images/tiktok1.svg';
 import { ReactComponent as Telegram1 } from '../assets/images/telegram1.svg';
 import { ReactComponent as Telegram2 } from '../assets/images/telegram2.svg';
+import Lottie from '../Lottie';
+import trdd2 from '../assets/images/Ellipse6.png';
+import trdd from '../assets/images/5300_2_02-ai 1.png';
 export default function HomePage(props) {
     const page1 = useRef();
     const page2 = useRef();
@@ -134,7 +137,8 @@ export default function HomePage(props) {
                                 </div>
                             </section>
                             <section className='home-section-2'>
-                                <img src={require('../assets/images/4500_6_06-ai-2.png')} alt="" />
+                                {/* <img src={require('../assets/images/4500_6_06-ai-2.png')} alt="" /> */}
+                                <Lottie className='home-section-2-lottie'/>
                             </section>
                         </div>
                     </div>
@@ -290,24 +294,30 @@ export default function HomePage(props) {
                 </div>
             </div>
             <div className="position-relative p5" ref={page5}>
-                <div className="bg-footer">
-                    <div className="container">
+                <div className="bg-footer  container_relative">
+                    <div className="container ">
                         <div className='display-grid footer-1'>
-                            <div className='footer-content'>
-                                <p className='footer-para'>CakePool is set up to have rewards given out even if there is zero trading being done</p>
+                            <div className='flex'>
+                                <div>
+                                    <p className='footer-para'>CakePool is set up to have rewards given out even if there is zero trading being done</p>
+                                    <div className='social-icon'>
+                                        <h2>Follow Us</h2>
+                                        <ul className='social-icon-list'>
+                                            <li><a href="https://www.instagram.com/cakepoolstaking/"><Instagram1 /></a></li>
+                                            <li><a href="https://www.tiktok.com/@cakepoolstaking"><Tiktok1 /></a></li>
+                                            <li><a href="https://www.reddit.com/r/CakePool/"><Reddit1 /></a></li>
+                                            <li><a href="https://twitter.com/CakePoolTweets"><Twitter1 /></a></li>
+                                            <li><a href="https://t.me/CakePool"><Telegram1 /></a></li>
+                                            <li><a href="https://discord.com/invite/XdacqRMKbq"><Discord1 /></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src={trdd} alt=""/>
+
                             </div>
-                            <div className='social-icon'>
-                                <h2>Follow Us</h2>
-                                <ul className='social-icon-list'>
-                                    <li><a href="https://google.com"><Instagram1 /></a></li>
-                                    <li><a href="google.com"><Tiktok1 /></a></li>
-                                    <li><a href="google.com"><Reddit1 /> </a></li>
-                                    <li><a href="google.com"><Twitter1 /></a></li>
-                                    <li><a href="google.com"><Telegram1 /></a></li>
-                                    <li><a href="google.com"><Discord1 /></a></li>
-                                </ul>
-                            </div>
-                            <img clssName='footer-img' src={require('../assets/images/5300_2_02-ai.png')} alt="" />
+
+
+
                         </div>
                     </div>
                     <div className="container-mobile">
@@ -318,15 +328,19 @@ export default function HomePage(props) {
                             </div>
                             <ul className="social-icon-list">
 
-                                <li><a href="google.com"><Telegram2 className='bottom-icon' /></a></li>
-                                <li><a href="google.com"><Twitter2 className='bottom-icon' /></a></li>
-                                <li><a href="google.com"><Reddit2 className='bottom-icon' /></a></li>
-                                <li><a href="google.com"><Discord2 className='bottom-icon' /></a></li>
+                                <li><a href="https://t.me/CakePool"><Telegram2 className='bottom-icon' /></a></li>
+                                <li><a href="https://twitter.com/CakePoolTweets"><Twitter2 className='bottom-icon' /></a></li>
+                                <li><a href="https://www.reddit.com/r/CakePool/"><Reddit2 className='bottom-icon' /></a></li>
+                                <li><a href="https://discord.com/invite/XdacqRMKbq"><Discord2 className='bottom-icon' /></a></li>
 
                             </ul>
                         </footer>
+
                     </div>
+                    <img alt="" src={trdd2} className="curve_footer" />
+
                 </div>
+
             </div>
         </>
     )

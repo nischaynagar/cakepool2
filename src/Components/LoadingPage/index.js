@@ -6,9 +6,9 @@ export default function LoadingPage(props) {
     var i = 10;
     var int = setInterval(function () {
       document.body.scrollTo(0, i);
-      i += 20;
-      if (i >= pageHeight + 50) clearInterval(int);
-    }, 20);
+      i += 10;
+      if (i >= pageHeight*1.2) clearInterval(int);
+    }, 1);
   }
   const page0 = useRef();
   const options = useMemo(() => ({

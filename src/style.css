@@ -19,7 +19,7 @@
   }
   
   /* Set core root defaults */
-  html:focus-within {
+  html {
     scroll-behavior: smooth;
   }
   
@@ -114,7 +114,7 @@
 
   /* General Styling */
 html{
-  background-color: #00444c;
+  background-color: #01252A;
 }
 
 .container {

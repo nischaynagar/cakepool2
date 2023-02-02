@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState} from 'react'
 import './style.css'
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import {ReactComponent as Menu} from '../assets/images/icon-hamburger.svg'
+import {ReactComponent as CloseIcon} from '../assets/images/icon-close.svg'
 
 export default function Navbar(props) {
   const [menu, setmenu] = useState(false);
@@ -23,6 +23,7 @@ export default function Navbar(props) {
   function toggleIcon(){
     const primaryNav = document.querySelector(".primary-navigation");
     const primaryHeader = document.querySelector(".primary-header");
+    const primaryButton = document.querySelector(".toggleDisplay");
     if(menu){
       setmenu(false);
     }
@@ -30,8 +31,8 @@ export default function Navbar(props) {
       setmenu(true);
     }
     primaryNav.toggleAttribute("data-visible");
-    primaryHeader.toggleAttribute("data-overlay");
-    console.log(menu);  
+    primaryButton.toggleAttribute("data-visible");
+    primaryHeader.toggleAttribute("data-overlay");  
   }
   
 
@@ -52,7 +53,7 @@ export default function Navbar(props) {
             </button>
             :<button onClick={toggleIcon} className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
               {/* <CloseIcon className="icon-close" aria-hidden="true" /> */}
-              <MenuIcon className="icon-hamburger" aria-hidden="true" />
+              <Menu className="icon-hamburger" aria-hidden="true" />
               <span className="visually-hidden">Menu</span>
             </button>}
             <nav className="primary-navigation">
@@ -61,6 +62,7 @@ export default function Navbar(props) {
                 <li>Tokenomics</li>
                 <li>Future</li>
                 <li>WhitePaper</li>
+                <li className='toggleDisplay'><button  className="button">Buy Now</button></li>
               </ul>
             </nav>
             <button  className="button display-sm-hidden display-md-inline-flex">Buy Now</button>

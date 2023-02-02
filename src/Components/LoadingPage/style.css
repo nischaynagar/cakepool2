@@ -38,7 +38,7 @@
 .arrow-button{
     display: grid;
     place-items: center;
-    margin: auto;
+    margin: auto auto 6rem auto;
     background: transparent;
     border: none;
     cursor: pointer;
