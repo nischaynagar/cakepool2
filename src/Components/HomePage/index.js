@@ -16,7 +16,7 @@ import { ReactComponent as Twitter2 } from '../assets/images/twitter2.svg';
 import { ReactComponent as Tiktok1 } from '../assets/images/tiktok1.svg';
 import { ReactComponent as Telegram1 } from '../assets/images/telegram1.svg';
 import { ReactComponent as Telegram2 } from '../assets/images/telegram2.svg';
-import Lottie from '../Lottie';
+import { Lottie1, Lottie2, Lottie3 } from '../Lottie';
 import trdd2 from '../assets/images/Ellipse6.png';
 import trdd from '../assets/images/5300_2_02-ai 1.png';
 export default function HomePage(props) {
@@ -35,6 +35,7 @@ export default function HomePage(props) {
         let temppage2 = null;
         let temppage3 = null;
         let temppage4 = null;
+        
         const observer = new IntersectionObserver(function
             (entries, observer) {
                 entries.forEach(entry => {
@@ -106,21 +107,6 @@ export default function HomePage(props) {
     function showBox3(){
         setcontentNum(3);
     }
-    function readMore() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("read-more");
-
-        if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "Read more";
-            moreText.style.display = "none";
-        } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Read less";
-            moreText.style.display = "inline";
-        }
-    }
     return (
         <>
             <div className="position-relative p1" ref={page1}>
@@ -138,7 +124,8 @@ export default function HomePage(props) {
                             </section>
                             <section className='home-section-2'>
                                 {/* <img src={require('../assets/images/4500_6_06-ai-2.png')} alt="" /> */}
-                                <Lottie className='home-section-2-lottie'/>
+                                <Lottie1 className='home-section-2-lottie'/>
+                                
                             </section>
                         </div>
                     </div>
@@ -169,13 +156,13 @@ export default function HomePage(props) {
                     <div className="container-mobile">
                         <div className="display-grid section-5">
                             <section className='home-section-5'>
-
                                 <h1>1 million dollar challenge</h1>
-                                <p>The goal is to get from $1,000 to $1,000,000 by doing 10 2x trades. There will be a community challenge and an individual challenge. The community will vote on which tokens to buy.<span id="dots">...</span><span id="more"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae.</span></p>
-                                <button onClick={readMore} id="read-more" className='read-more'>Read more</button>
+                                <p>The goal is to get from $1,000 to $1,000,000 by doing 10 2x trades. There will be a community challenge and an individual challenge. The community will vote on which tokens to buy.</p>
                             </section>
                             <section className='home-section-6'>
-                                <img src={require('../assets/images/6100_5_01-ai 1.png')} alt="" />
+                                 <Lottie2 className='fix-position '/>
+
+                                {/* <img src={require('../assets/images/6100_5_01-ai 1.png')} alt="" /> */}
                             </section>
                         </div>
                     </div>
@@ -184,8 +171,7 @@ export default function HomePage(props) {
             </div>
             <div className='position-relative p4' ref={page4}>
                 <div className="bg-page4">
-                    <div className="container">
-                        <div className="display-grid align-center">
+                    <div className="container tokenomics-section">
                             <div className="content-wrapper">
                                 <h1>Tokenomics</h1>
                                 {(contentNum === 0)?<div className='grid-box'>
@@ -288,7 +274,6 @@ export default function HomePage(props) {
                                 </div>
                             </div>}
                                 
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -297,7 +282,7 @@ export default function HomePage(props) {
                 <div className="bg-footer  container_relative">
                     <div className="container ">
                         <div className='display-grid footer-1'>
-                            <div className='flex'>
+                            <div className='footer-section-1'>
                                 <div>
                                     <p className='footer-para'>CakePool is set up to have rewards given out even if there is zero trading being done</p>
                                     <div className='social-icon'>
@@ -312,7 +297,9 @@ export default function HomePage(props) {
                                         </ul>
                                     </div>
                                 </div>
-                                <img src={trdd} alt=""/>
+                                {/* <img src={trdd} alt=""/> */}
+                                <Lottie3 className='home-section-2-lottie'/>
+
 
                             </div>
 

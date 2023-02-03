@@ -131,6 +131,7 @@
 .home-section-3{
     display: grid;
     gap: 2rem;
+    padding: 0 10%;
     text-align: center;
     color: rgba(3, 93, 104, 0.74);
 }
@@ -323,9 +324,17 @@
     place-items: center;
 }
 
+.tokenomics-section {
+    display: flex;
+    align-items: center;
+}
+
 .content-wrapper{
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     padding: 3em 2em;
     gap: 2rem;
     background-color: rgba(3, 93, 104, 1);
@@ -346,7 +355,7 @@
   } */
 .grid-box{
     display: grid;
-    padding: 2em 2em;
+    padding: 2em 2em 5em 2em;
     gap: 1rem;
     place-items: center;
     grid-template-areas: 'one'
@@ -370,14 +379,15 @@
 
 .box{
     width: min(25ch, 45vw);
-    border-radius: 20px;
-    box-shadow: 0 0 10px 1px rgba(3, 93, 104, 1);
     padding: 2em 2em;
-    background-color: rgba(2, 119, 133, 1);
+    background: #027785;
+    box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
     display: grid;
     gap: 2rem;
 }
 .full-content-1{
+    height: 100%;
     border-radius: 20px;
     box-shadow: 0 0 10px 1px rgba(3, 93, 104, 1);
     padding: 2em 2em;
@@ -462,8 +472,14 @@
          grid-auto-columns: 1fr;
         gap: 3rem;
     }
+    .tokenomics-section {
+        display: flex;
+        align-items: center;
+        padding: 5em 10em;
+    }
     .content-wrapper{
-        padding: 3rem 8rem;
+        padding: 3rem 15rem;
+        height: 35em;
     }
     .align-center{
         padding-bottom: 10rem;
@@ -522,6 +538,7 @@
     font-size: 32px;
 }
 
+
 .social-icon{
     display: grid;
     gap: 1rem;
@@ -574,6 +591,13 @@
     .bg-footer::before{
         background-position: 110% -10%, 0% -140%;
         background-size: 60%, 100%;
+    }
+    .footer-1{
+        padding: 5rem 2rem 0em 5rem;
+    }
+    .footer-section-1{
+        display: flex;
+        justify-content: space-between;
     }
     .footer-2{
         display: flex;

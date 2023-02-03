@@ -23,7 +23,7 @@ export default function LoadingPage(props) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         if (entry.target.classList.contains('p0')) {
-          props.changeNav("#035D68")
+          props.changeNav("#01252A")
           props.settextColor('white')
         }
       })

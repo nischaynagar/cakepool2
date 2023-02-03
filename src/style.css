@@ -118,7 +118,7 @@ html{
 }
 
 .container {
-  --max-width: 1110px;
+  --max-width: 1680px;
   --container-padding: 1rem;
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));

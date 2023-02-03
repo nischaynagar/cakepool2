@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar'
 import HomePage from './Components/HomePage'
 import './style.css'
 export default function App() {
-  const [navColor, setnavColor] = useState("#00444c");
+  const [navColor, setnavColor] = useState("#01252A");
   const [textColor, settextColor] = useState('white');
   // const [moveLoadingPage, setmoveLoadingPage] = useState(false);
   return (

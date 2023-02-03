@@ -1,0 +1,17 @@
+.panda2Lottie {
+    transform: scaleX(-1);
+}
+.panda3Lottie{
+    max-width: 100%;
+}
+
+@media(min-width: 50em){
+    .panda2Lottie img{
+        transform: scaleX(1);
+    }
+    .panda3Lottie{
+        width: 50%;
+        height: 100%;
+        max-width: 100%;
+    }
+}
